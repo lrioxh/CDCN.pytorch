@@ -30,5 +30,5 @@ tensorboard --logdir=experiments/log --port=8008
 
 ## Inference
 
-single image inference by inference.py![mtcnn face](./data/inference/mtcnn face.png)
+single image inference by inference.py![mtcnn face](https://github.com/lrioxh/CDCN.pytorch/blob/main/data/inference/mtcnn%20face.png)
 
