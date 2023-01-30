@@ -14,7 +14,7 @@ RTX3060 Laptop
 
 get original data from [here](https://github.com/voqtuyen/CDCN-Face-Anti-Spoofing.pytorch/tree/master/data/nuaa) 
 
-OR if you‘d like to train on custom dataset, use custom_data.py to add/create your custom data
+OR if you‘d like to train on custom data, use custom_data.py to add/create your custom dataset
 
 before run custom_data.py, labeled images should be put in data/custom. Label format is like 0_xxxx.jpg
 
@@ -30,5 +30,5 @@ tensorboard --logdir=experiments/log --port=8008
 
 ## Inference
 
-single image inference by inference.py![mtcnn face](\data\inference\mtcnn face.png)
+single image inference by inference.py![mtcnn face](./data/inference/mtcnn face.png)
 
