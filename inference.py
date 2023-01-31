@@ -11,7 +11,7 @@ from utils.utils import read_cfg
 from utils.eval import predict
 
 PATH = r"experiments\output\CDCNpp_nuaap.pth"
-test_image = r"data\test\00_20230127004339.jpg"
+test_image = r"data\test\0_20230127005314.jpg"
 cfg = read_cfg(cfg_file="config/CDCNpp_adam_lr1e-3.yaml")
 transform = transforms.Compose([
         transforms.Resize(cfg['model']['input_size']),

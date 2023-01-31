@@ -1,5 +1,5 @@
 output_dir: 'experiments/output'
-log_dir: 'experiments/log/6'
+log_dir: 'experiments/log/0'
 device: '0'
 dataset:
   name: 'nuaap_100_e-3'
