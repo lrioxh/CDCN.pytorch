@@ -12,6 +12,7 @@ class FASTrainer(BaseTrainer):
         super(FASTrainer, self).__init__(cfg, network, optimizer, criterion, lr_scheduler, device, trainloader, valloader, writer)
 
         self.network = self.network.to(device)
+        self.epoch=0
 
         self.train_loss_metric = AvgMeter(writer=writer, name='Loss/train', num_iter_per_epoch=len(self.trainloader), per_iter_vis=True)
         self.train_acc_metric = AvgMeter(writer=writer, name='Accuracy/train', num_iter_per_epoch=len(self.trainloader), per_iter_vis=True)
@@ -26,6 +27,8 @@ class FASTrainer(BaseTrainer):
 
         self.optimizer.load_state_dict(state['optimizer'])
         self.network.load_state_dict(state['state_dict'])
+        self.epoch=state['epoch']
+        # return state['epoch']
 
 
     def save_model(self, epoch):
@@ -73,9 +76,15 @@ class FASTrainer(BaseTrainer):
 
     def train(self):
         self.best_val_acc=0.0
-        for epoch in range(self.cfg['train']['num_epochs']):
+        if self.cfg['model']['pretrained']:
+            self.load_model()
+            print("Continue training from epoch {self.epoch}")
+            self.best_val_acc = self.validate(epoch)
+        
+        for epoch in range(self.epoch,self.cfg['train']['num_epochs']):
             self.train_one_epoch(epoch)
             epoch_acc = self.validate(epoch)
+            print(f"Epoch: {epoch}, acc: {epoch_acc}")
             if epoch_acc > self.best_val_acc:
                 self.best_val_acc = epoch_acc
                 self.save_model(epoch)
