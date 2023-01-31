@@ -67,18 +67,14 @@ for face in faces:
     image_cr = image_rgb[y1:y2,x1:x2]
 
     # image_cr=cv2.resize(image_cr,(256,256))
-    # print(image_cr.shape)
     # img = img.transpose(2,0,1)
     # image_cr = image_cr.transpose(2,1,0)
-    # print(image_cr.shape)
     image=Image.fromarray(image_cr)
     image = transform(image).unsqueeze(0)
     # Now apply the transformation, expand the batch dimension, and send the image to the GPU
     # image = torch.from_numpy(img).float().unsqueeze(0)#.cuda(0)
     #after the image is in the proper form, it is loaded to the CDCNN model for output
-    # print(image)
     outputs = model(image)
-    # print(outputs[0])
 
     #torch.no_grad() is used to prevent errors from clashes 
     #and only output's [0] tuple part used out of the 6 since that 
@@ -88,8 +84,6 @@ for face in faces:
         #by taking the mean of the depth map, the result of genuineness is found
         depth_map=outputs[0]
         depth_map=np.where(depth_map<1,depth_map,1)
-        # depth_map=depth_map/depth_map.max()
-        # print(depth_map)
         # score = torch.mean(depth_map, axis=(1,2))
         score = np.mean(depth_map, axis=(1,2))
         # preds, score = predict(depth_map)
