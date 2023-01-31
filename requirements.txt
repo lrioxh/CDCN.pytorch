@@ -1,0 +1,9 @@
+opencv-python
+future
+tensorboard
+mtcnn_cv2
+torch>=1.2.0
+torchvision>=0.4.0
+pandas
+pillow>=6.2.2
+pyyaml

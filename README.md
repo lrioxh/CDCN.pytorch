@@ -1,6 +1,6 @@
 # Apply Central Difference Convolutional Network (CDCN) for Face Anti Spoofing
 
-An adaptation from [CDCN-Face-Anti-Spoofing.pytorch](https://github.com/voqtuyen/CDCN-Face-Anti-Spoofing.pytorch) and [face-anti-spoofing](https://github.com/laoshiwei/face-anti-spoofing)
+An adaptation from [CDCN-Face-Anti-Spoofing.pytorch](https://github.com/voqtuyen/CDCN-Face-Anti-Spoofing.pytorch) and [face-anti-spoofing](https://github.com/laoshiwei/face-anti-spoofing), add script to build custom data and fix bugs
 
 ## Dependence
 
@@ -33,4 +33,23 @@ tensorboard --logdir=experiments/log --port=8008
 single image inference by inference.py
 
 ![mtcnn face](https://github.com/lrioxh/CDCN.pytorch/blob/main/data/inference/mtcnn%20face.png)
+
+## Notes
+
+#### difference from origin [CDCN](https://github.com/ZitongYu/CDCN): 
+
+- The original version uses living face depth map estimated by PRNet and spoofing depth map is set to 0
+  In this version, spoofing depth map is also set to 0, but the living face depth map is set to 1 directly
+
+- due to the difference about depth map, scores are calculated differently
+
+#### difference from other version: 
+
+- added custom data & param θ=0.7 in origin paper；
+
+- added pre-processing before inference
+
+- save optimal weights instead of latest
+
+
 
