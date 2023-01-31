@@ -2,7 +2,7 @@ output_dir: 'experiments/output'
 log_dir: 'experiments/log/0'
 device: '0'
 dataset:
-  name: 'nuaap_100_e-3'
+  name: 'nuaap_100_e-4'
   root: 'data/nuaa'
   augmentation:
     horizontal_flip: True
@@ -25,7 +25,7 @@ model:
 train:
   batch_size: 8
   optimizer: 'adam'
-  lr: 0.001
+  lr: 0.0001
   num_epochs: 100
   smoothing: True
 val:
