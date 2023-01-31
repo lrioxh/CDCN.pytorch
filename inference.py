@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Tue Aug 24 08:52:52 2021
 
-@author: Admin
-"""
 from mtcnn_cv2 import MTCNN
 import numpy as np
 import torch

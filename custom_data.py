@@ -27,6 +27,7 @@ def rotate(image, angle, center=None, scale=1.0):
 
 
 for file in os.listdir(dir):
+    if file.endswith('.txt'):continue
     label=int(file.split('_')[0])   #1=genuine/live
 
     path=os.path.join(dir,file)
