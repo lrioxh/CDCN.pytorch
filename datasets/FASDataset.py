@@ -24,9 +24,9 @@ class FASDataset(Dataset):
         self.transform = transform
         
         if smoothing:
-            self.label_weight = 1.0
+            self.label_weight = 0.999
         else:
-            self.label_weight = 0.99
+            self.label_weight = 1.0
 
 
     def __getitem__(self, index):
