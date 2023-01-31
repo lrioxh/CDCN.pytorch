@@ -56,7 +56,8 @@ def main():
         csv_file=cfg['dataset']['train_set'],
         depth_map_size=cfg['model']['depth_map_size'],
         transform=train_transform,
-        smoothing=cfg['train']['smoothing']
+        smoothing=cfg['train']['smoothing'],
+        depth_map_default=cfg['model']['depth_map_default']
     )
 
     valset = FASDataset(
@@ -64,7 +65,8 @@ def main():
         csv_file=cfg['dataset']['val_set'],
         depth_map_size=cfg['model']['depth_map_size'],
         transform=val_transform,
-        smoothing=cfg['train']['smoothing']
+        smoothing=cfg['train']['smoothing'],
+        depth_map_default=cfg['model']['depth_map_default']
     )
 
     trainloader = torch.utils.data.DataLoader(

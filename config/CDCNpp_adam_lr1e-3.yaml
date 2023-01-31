@@ -3,7 +3,7 @@ log_dir: 'experiments/log/0'
 device: '0'
 dataset:
   name: 'nuaap_100_e-4'
-  root: 'data/nuaa'
+  root: 'data/train'
   augmentation:
     horizontal_flip: True
     rotation_range: 10
@@ -22,6 +22,7 @@ model:
   pretrained: false
   input_size: [256,256]
   depth_map_size: [32,32]
+  depth_map_default: 1
 train:
   batch_size: 8
   optimizer: 'adam'

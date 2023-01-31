@@ -46,10 +46,7 @@ single image inference by inference.py
 #### difference from other version: 
 
 - add custom data & param θ=0.7 as in origin paper；
-
 - add pre-processing before inference
-
 - save optimal weights instead of latest
-
-
+- add api for pre-generated depth maps. If you want to train with the depth map estimated by PRNet, put the depth map you generated from live face into data/train/depth and add a column "depth/xxxx" to the .csv corresponding to the depth map file. then set "depth_map_default" to 0 and train
 
