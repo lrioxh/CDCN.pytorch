@@ -10,7 +10,7 @@ import models.CDCNs as CDCNs
 from utils.utils import read_cfg
 from utils.eval import predict
 
-PATH = r"experiments\output\CDCNpp_nuaap.pth"
+PATH = r"experiments\output\CDCNpp_nuaap_100_e-4.pth"
 test_image = r"data\test\0_20230127005314.jpg"
 cfg = read_cfg(cfg_file="config/CDCNpp_adam_lr1e-3.yaml")
 transform = transforms.Compose([
