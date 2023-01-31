@@ -45,9 +45,9 @@ single image inference by inference.py
 
 #### difference from other version: 
 
-- added custom data & param θ=0.7 in origin paper；
+- add custom data & param θ=0.7 as in origin paper；
 
-- added pre-processing before inference
+- add pre-processing before inference
 
 - save optimal weights instead of latest
 
